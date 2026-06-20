@@ -1,6 +1,6 @@
 # Snake Game
 
-A classic terminal-based Snake game implementation using Python.
+A classic **terminal-based** Snake game implementation using Python.
 
 ## Overview
 
@@ -24,5 +24,5 @@ python3 play.py
 | **Arrow Keys** | Move snake (UP, DOWN, LEFT, RIGHT) |
 | **W, A, S, D** | Alternative movement keys |
 | **P** | Pause/Resume game |
-| **R** | Restart game (when game over) |
+| **R** | Restart game |
 | **Q** | Quit game |
