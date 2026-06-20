@@ -163,7 +163,14 @@ class Game:
         self.snake.move()
         new_head = self.snake.body[0]
 
-        # Check for collision
+        # Check for wall collision: new head goes out of game board space
+        try:
+            self.board.validate_cell_position(new_head.i, new_head.j)
+        except ValueError:
+            self.state = GameState.GAME_OVER
+            return
+
+        # Check for self-collision
         if self.snake.has_collided(new_head):
             self.state = GameState.GAME_OVER
             return
@@ -179,7 +186,7 @@ class Game:
 
             self.food.create_food(self.snake.body) # Create new food 
             new_food = self.food._position
-            self.board.update_cell_with_food(new_food.i, new_food.j)
+            self.board.update_cell_with_food(new_food.i, new_food.j) # type: ignore
         
 
     # Pause a running game 
