@@ -24,8 +24,8 @@ TICK_INTERVAL = 0.15  # seconds between automatic snake moves
 
 CELL_CHAR = {
     CellState.EMPTY: ". ",
-    CellState.SNAKE_BODY: "# ",
-    CellState.FOOD: "* ",
+    CellState.SNAKE_BODY: "\033[92m# \033[0m",      # Green snake
+    CellState.FOOD: "\033[91m* \033[0m",            # Red food
 }
 
 KEY_MAP = {
