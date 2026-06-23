@@ -64,6 +64,7 @@ class Snake:
         self.body = [Position(10, 2), Position(10, 1), Position(10, 0)] # Default position to spawn snake with head-first
         self._length = 3 # Default snake size
         self._direction = Direction.RIGHT # Default to move in right direction
+        self.score = 0 
 
     def set_direction(self, new_direction):
         # No change in direction for reversal like UP <-> DOWN or LEFT <-> RIGHT
@@ -183,6 +184,9 @@ class Game:
         else:
             # Snake grows back adding back the old tail
             self.snake.grow(old_tail)
+
+            # Update Score 
+            self.snake.score += 1
 
             self.food.create_food(self.snake.body) # Create new food 
             new_food = self.food._position

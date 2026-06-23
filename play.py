@@ -55,7 +55,7 @@ def render(game):
     sys.stdout.write("\x1b[H\x1b[J")  # cursor home + clear screen
     rows = ["".join(CELL_CHAR[cell] for cell in row) for row in game.board.board]
     sys.stdout.write("\n".join(rows))
-    sys.stdout.write(f"\n\nScore: {len(game.snake.body)}   State: {game.state.value}")
+    sys.stdout.write(f"\n\nScore: {game.snake.score}   State: {game.state.value}")
     if game.state == GameState.GAME_OVER:
         sys.stdout.write("\n\nGame over!  R = restart   Q = quit")
     else:
